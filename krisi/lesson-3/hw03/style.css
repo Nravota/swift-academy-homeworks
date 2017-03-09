@@ -1,0 +1,44 @@
+main,
+aside {
+    float: left;
+}
+
+main {
+    width: 75%;
+}
+
+aside {
+    width: 25%;
+    background-color: black;
+    color: #FDD273;
+}
+
+html {
+    background: url(images/amsterdam-background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#title {
+    background-color: #FDD273;
+    padding: 5px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+article {
+    background-color: #FDD273;
+    opacity: 0.8;
+    text-align: center;
+}
+
+span {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    color: #FDD273;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

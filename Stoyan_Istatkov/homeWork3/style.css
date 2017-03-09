@@ -1,3 +1,6 @@
+*  {
+    box-sizing: border-box;
+}
 body {
     background-color: aliceblue;
     font-family: lato, sans-serif;

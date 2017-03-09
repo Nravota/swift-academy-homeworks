@@ -1,0 +1,25 @@
+main,
+aside {
+    float: left;
+}
+
+main {
+    width: 75%;
+}
+
+aside {
+    width: 25%;
+}
+
+main img {
+    height: 300px;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+body {
+    background-color: lightpink;
+}

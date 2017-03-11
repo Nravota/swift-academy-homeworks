@@ -16,6 +16,14 @@ aside {
     color: #FDD273;
 }
 
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 10px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
 nav ul {
     list-style: circle;
 }

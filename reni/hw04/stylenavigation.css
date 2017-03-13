@@ -1,6 +1,15 @@
 body {
     background-color: beige;
 }
+a, section, main, h2, p {
+    padding: 10px;
+}
+#container {
+    display: flex;
+}
+main {
+    flex-grow: 1;
+}
 section {
     background-color: burlywood;
 }

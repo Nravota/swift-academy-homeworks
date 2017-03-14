@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Електронна визитка</title>
+	<meta charset="UTF-8">
+    <meta name="description" content="Gabriela Dobreva portfolio" />
+     <meta name="keywords" content="e-vizitka, resume, predstavqne, portfolio, gabriela, dobreva"/> 
+	  
+     <link rel="stylesheet" href="styles.css">
+     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  	</head>
+	<body>
+ 
+     <div id="left">
+	 <div>
+         <img id="my-photo" src="images.jpg" title="my-photo" alt="my-photo">
+	</div>	 
+		 <q id="quoteText">Don’t spend time beating on a wall, hoping to transform it into a door.</q>
+          <nav>
+             <ul>
+                <li><a href="#about-me">За мен</a></li>
+                <li><a href="#history">Резюме</a></li>
+                <li><a href="#projects">Проекти</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+         </nav>
+     </div> 
+  <div id="right">
+         <header>
+            <h1>Електронна визитка</h1>
+         </header>
+         <main>
+            <section id="about-me">
+                 <h2>За мен:</h2>
+                 <p><i><strong>Име:</strong></i>Габриела Добрева</p>
+                 <p><i><strong>Текуща позиция:</strong></i>Банков служител "Консултиране и продажби " в ОББ,София</i></p>
+			 </section>
+ 
+             <section id="history">
+                 <h2>Резюме:</h2>
+                 <ul>
+					<li>
+					<h3>28.02.2017-досега</h3>
+                         <p><i>Курс по Front-end Development - Swift Academy,София</i></p>
+                     </li>
+					 <li>
+						<h3>20.04.2016-13.07.2016</h3>
+						<p><i>Курс по C++ -Teleric Academy,София</i></p>
+                     </li>
+					 <li>
+					 <h3>01.10.2010-17.05.2014-семестриално завършено</h3>
+					<p><i>Висше образование-Приложна математика,Софийски университет "Свети Климент Охридски",София</i></p>
+					</li>
+					<li>
+					<h3>15.09.2005-22.05.2010</h3>
+					<p><i>Средно образование-ГПЧЕ "Васил Карагъозов",Ямбол</i></p>
+					</li>
+					
+				
+				</ul>
+			<section>
+			 <section id="projects">
+                 <h2>Портфолио:</h2>
+                <a href="./hw01/myFirstHtmlFile.html">My first html page</a>
+                 
+			<section id="contacts">
+                <h2>Контакти</h2>
+                 <ul>
+                     <li><i>Телефон:0887021764</i></li>
+                    <li><i><a href="mailto:gabriela.dobreva@abv.bg">gabriela.dobreva@abv.bg</i></li></a> 
+				
+				
+                 </ul>
+            </section>
+			<section><a href="#about-me">Go to top</a></section>
+		</main>
+		<footer>
+		<p>&copy;Gabriela Dobreva</p>
+		</footer>
+	</div>
+</body>
+</html>	

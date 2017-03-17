@@ -1,0 +1,19 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+}
+
+#left {
+	float: left;
+	background-color: aqua;
+	height: 100%;
+	flex-basis: 25%;
+}
+
+#right {
+	background-color: antiquewhite;
+	flex-grow: 1;
+}

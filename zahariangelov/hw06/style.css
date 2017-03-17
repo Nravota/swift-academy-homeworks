@@ -61,7 +61,6 @@
         list-style: none;
     }
     ul a li {
-        text-decoration: none;
         font-family: Verdana;
         font-size: 18pt;
     }
@@ -143,7 +142,6 @@
         list-style: none;
     }
     ul a li {
-        text-decoration: none;
         font-family: Verdana;
         font-size: 18pt;
         border-color: black;
@@ -226,7 +224,6 @@
         list-style: none;
     }
     ul a li {
-        text-decoration: none;
         font-family: Verdana;
         font-size: 12pt;
         border-color: black;

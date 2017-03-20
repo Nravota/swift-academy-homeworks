@@ -67,13 +67,15 @@ footer {
     background-color: darkgoldenrod;
 }
 
-header#main {
+header.main {
     background-color: chartreuse;
 }
 
-footer#main {
+footer.main {
     text-align: center;
     margin-top: 50px;
+    clear: left;
+    background-color: darkgreen;
 }
 
 

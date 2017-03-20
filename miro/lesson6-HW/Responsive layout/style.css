@@ -44,11 +44,13 @@ aside {
     display: flex;
     background: #333;
     position: sticky;
-    top: -1px;
+    top: 0px;
+
 }
 
 nav {
     display: flex;
+
 }
 
 ul {

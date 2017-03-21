@@ -5,19 +5,17 @@ html {
 
 * {
     box-sizing: border-box;
+    /*za da ne se razmestva sled padding-a */
 }
 
 main,
 aside {
     float: left;
     padding: 20px;
-    box-sizing: border-box;
-    /*za da ne se razmestva sled padding-a */
 }
 
 main {
     width: 75%;
-    /* height: 40%; */
 }
 
 aside {
@@ -36,4 +34,8 @@ footer {
 
 body {
     background-color: lightpink;
+}
+
+footer {
+    margin: 30px;
 }

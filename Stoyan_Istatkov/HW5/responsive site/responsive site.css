@@ -68,7 +68,7 @@ section {
     color: #2e8572;
     padding: 20px;
     background-color: aliceblue;
-    flex-grow: 8;
+    flex-grow: 7;
 }
 article {
     border-bottom: 2px solid darkcyan;
@@ -117,7 +117,7 @@ footer {
         flex-grow: 10;
     }
     header {
-        background-color: #2e8572;
+        background-color: #9f0d3b;
     }
 
     aside {

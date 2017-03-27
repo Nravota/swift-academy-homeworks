@@ -7,7 +7,7 @@ header {
     height: 600px;
 }
 body {
-    background-color: bisque
+    background-color: bisque;
 }
 td, th {
     padding: 10px;
@@ -22,8 +22,7 @@ td {
     padding-right: 20px;
 }
 nav a {
-    float: left
-    font-family: Helvetica, sans-serif;
+    float: left;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
@@ -31,9 +30,9 @@ nav a {
     width: 100px;
     display: flex;
 }
-. {
+.left{
     display: flex;
-    float: left
+    float: left;
 }
 .top-link {
     text-decoration: none;
@@ -43,21 +42,24 @@ nav a {
 }
 .pink {
     background-color: #689f5b;
-    margin: 20px 10px
+    margin: 20px 10px;
+    border-style: double;
 }
 .green {
     background-color: #fbc701;
-    margin: 20px 10px
+    margin: 20px 10px;
+    border-style: double;
 }
 .yellow {
     background-color: midnightblue;
-    margin: 20px 10px
+    margin: 20px 10px;
+    border-style: double;
 }
 .blue {
     background-color: #0292bf;
-    margin: 20px 10px
+    margin: 20px 10px;
+    border-style: double;
 }
 footer {
     text-align: center;
-    display: flex;
 }

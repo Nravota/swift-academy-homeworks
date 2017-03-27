@@ -98,13 +98,13 @@ footer {
         color: black;
         font-size: 16px;
         width: 80px;
-        margin-right: 20px;
     }
     
     aside {
         flex-grow: 1;
         height: 80px;
-        padding-left:  10px;
+        display: flex;
+        justify-content: center;
     }
     
     aside h2 {

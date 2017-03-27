@@ -86,9 +86,6 @@ footer {
     img {
         width: 220px;
     }
-    body {
-        width: 800px;
-    }
 }
 
 @media (min-width: 1400px) {
@@ -97,8 +94,5 @@ footer {
     }
     img {
         width: 280px;
-    }
-    body {
-        width: 800px;
     }
 }

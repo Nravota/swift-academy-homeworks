@@ -99,6 +99,7 @@ header {
     height: 100%;
     overflow: overlay;
     background-color: green
+        
 }
 
 footer {
@@ -107,6 +108,8 @@ footer {
     color: white;
     text-align: center;
     border-bottom: 10px dashed brown;
+    border-left:10px dashed brown;
+    border-right:10px dashed brown;
 }
 
 @media(max-width:480px) {

@@ -17,10 +17,18 @@
     justify-content: center;
 }
 
+.buttons:hover {
+    z-index: 1;
+}
+
 nav {
     display: flex;
     justify-content: center;
     margin: 60px 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 #about,

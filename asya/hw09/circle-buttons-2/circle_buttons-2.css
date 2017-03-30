@@ -70,6 +70,8 @@ h1 {
 a:hover {
     position: relative;
     z-index: 1;
+    width: 140px;
+    height: 140px;
 }
 
 @media (max-width: 479px) {

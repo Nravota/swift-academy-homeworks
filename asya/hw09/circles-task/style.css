@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+
+div {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Courier New', fantasy;
+    color: white;
+    line-height: 1.5;
+}
+
+div:first-child:before {
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+div::after {
+    font-size: 14px;
+}
+
+@media (max-width: 459px) {
+    body {
+        background-color: #F8F0E7;
+    }
+    
+    div {
+        background-color: #827C14;
+        margin-top: 140px;     
+    }
+    
+    div:hover {
+        background-color: #BEC1F5;
+    }
+    
+    div:first-child:before {
+        content: "Small";
+    }
+    
+    div::after {
+        content: "<460px";
+    }
+}
+
+@media (min-width: 460px) and (max-width: 679px) {
+    body {
+        background-color: #EF875E;
+    }
+    
+    div {
+        background-color: #699BEA;
+        margin-top: 50px;
+    }
+    
+    div:hover {
+        background-color: #9F5A3E;
+    }
+    
+    div:first-child:before {
+        content: "Medium";
+    }
+
+    div::after {
+        content: "460px + 679px";
+    }
+}
+
+@media (min-width: 680px) and (max-width: 999px) {
+    body {
+        background-color: #FFF7DD;
+    }
+    
+    div {
+        background-color: #4A8422;
+        margin-top: 130px;
+    }
+    
+    div:hover {
+        background-color: #B57BDD;
+    }
+    
+    div:first-child:before {
+        content: "Large";
+    }
+
+    div::after {
+        content: "680px + 999px";
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        background-color: #F3FEFE;
+    }
+    
+    div {
+        background-color: #E84D98;
+        padding: 30px;
+        margin-top: 150px;
+    }
+    
+    div:hover {
+        background-color: #17B267;
+    }
+    
+    div:first-child:before {
+        content: "Extra-Large";
+        line-height: 1;
+        padding: 10px;
+    }
+
+    div::after {
+        content: ">1000px";
+    }
+}

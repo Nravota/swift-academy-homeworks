@@ -78,14 +78,16 @@ main section {
     background-size: cover;
 }
 
-
+.clearfix {
+    clear: both;
+}
+    
 footer {
-    clear: left;
     background: #333;
     color: #c2c2c2;
     padding: 4rem;
     text-align: center;
-    margin-top: 20%;
+    margin-top:100px;
 }
 
 ul.social li {

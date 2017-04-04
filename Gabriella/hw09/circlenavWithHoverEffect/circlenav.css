@@ -112,6 +112,12 @@ footer {
     border-right:10px dashed brown;
 }
 
+.hover-control:hover {
+    z-index: 99999;
+    width: 150px;
+    height: 150px;
+}
+
 @media(max-width:480px) {
     nav a {
         border-radius: 0%;

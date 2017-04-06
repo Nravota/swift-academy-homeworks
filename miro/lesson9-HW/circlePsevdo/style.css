@@ -112,29 +112,8 @@ section {
     padding: 1rem;
 }
 
+
 section:target {
     display: block;
 }
 
-@media (max-width: 479px) {
-    .wrapper {
-        padding: 0;
-    }
-    nav {
-        display: block;
-        padding: 0;
-    }
-    ul {
-        flex-direction: column;
-        position: static;
-    }
-    li {
-        position: static;
-        border-radius: 0;
-        text-align: center;
-    }
-    li a {
-        border-radius: 0;
-        width: 100%;
-    }
-}

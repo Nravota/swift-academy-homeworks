@@ -1,10 +1,15 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   background-color: whitesmoke;
   height: 100%;
+  margin: 20px auto;
+}
+
+#dialog-button {
+  width: 200px;
+}
+
+.modal-body {
+  padding: 0px;
 }
 
 header {
@@ -42,8 +47,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
   position: fixed;
+  height: 70px;
   bottom: 0px;
   width: 100%;
   padding: 20px;

@@ -14,82 +14,66 @@
 
 <body>
 
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active">
+      <button type="button" class="btn btn-lg">
+        Home
+      </button>
+    </li>
+    <li role="presentation">
+      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
+        About
+      </button>
+    </li>
+    <li role="presentation">
+      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#contactModal">
+        Contact me
+      </button>
+    </li>
+  </ul>
 
-  <center>
-    <button type="button" class="btn btn-default btn-lg" id="dialog-button" data-toggle="modal" data-target="#contact-form-dialog">
-      Contact me
-    </button>
-  </center>
-
-
-
-  <div class="modal fade" id="contact-form-dialog" tabindex="-1" role="dialog" aria-labelledby="contact-form-dialog">
-    <div class="modal-dialog modal-lg" role="document">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="contact-form-dialogLabel">Contact form</h4>
+          <h4 class="modal-title" id="myModalLabel">Contacts</h4>
         </div>
         <div class="modal-body">
-          <header>
-          </header>
-
-          <main>
-            <div class="row">
-              <div class="container col-md-12" id="heading">
-                <h1>Contact Us</h1>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h5>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6" id="input">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="user" placeholder="Your name">
-                </div>
-
-                <div class="form-group col-md-6">
-                  <input type="email" class="form-control" id="email" placeholder="Your email">
-                </div>
-
-                <div class="form-group col-md-12">
-                  <textarea type="text" class="form-control" id="message" rows="8" placeholder="Your message"></textarea>
-                </div>
-                <div class="form-group col-md-12">
-                  <button type="submit" class="btn pull-right">Submit</button>
-                </div>
-              </div>
-
-
-
-              <div class="col-md-6" id="contact-details">
-                <h4 class="info">Information</h4>
-                <div class="info"><span class="glyphicon glyphicon-map-marker"></span> Sofia, Tsarigradsko shose boulevard
-                  <br> 12345 PO BOX 1000</div>
-
-                <div class="info"><span class="glyphicon glyphicon-earphone"></span> +359 889 010101</div>
-
-                <div class="info"><span class="glyphicon glyphicon-print"></span> FAX: 000 333 444 5555</div>
-
-                <div class="info"><span class="glyphicon glyphicon-envelope"></span> example@email.com</div>
-              </div>
-            </div>
-          </main>
-
-          <footer>
-            <p>&copy; Copyright 2017 Someone Something Template</p>
-            <a href="#heading">
-              <div class="arrow"><span class="glyphicon glyphicon-circle-arrow-up"></span></div>
-            </a>
-          </footer>
+          About me
         </div>
         <div class="modal-footer">
-
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 
+
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="contactModalLabel">Contacts</h4>
+        </div>
+        <div class="modal-body">
+          <iframe src="contact_form_01/index01.html"></iframe>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <img src="marvel-img.jpg">
+    <img src="marvel-img.jpg">
+    <img src="marvel-img.jpg">
+    <img src="marvel-img.jpg">
+    <img src="marvel-img.jpg">
+    <img src="marvel-img.jpg">
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

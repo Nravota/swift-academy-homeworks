@@ -14,23 +14,38 @@
 
 <body>
 
-  <ul class="nav nav-tabs">
-    <li role="presentation" class="active">
-      <button type="button" class="btn btn-lg">
-        Home
-      </button>
-    </li>
-    <li role="presentation">
-      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
-        About
-      </button>
-    </li>
-    <li role="presentation">
-      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#contactModal">
-        Contact me
-      </button>
-    </li>
-  </ul>
+  <div>
+
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+      <li role="presentation" class="dropdown">
+        <a id="profileLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+            <span class="caret"></span>
+          </a>
+        <ul class="dropdown-menu" aria-labelledby="profileLabel">
+          <li><a href="https://www.facebook.com/" target="_blank">Facebook profile</a></li>
+          <li><a href="https://twitter.com/" target="_blank">Twitter profile</a></li>
+          <li><a href="https://www.pinterest.com/" target="_blank">Pinterest profile</a></li>
+        </ul>
+
+      </li>
+      <li role="presentation"><a href="#about" aria-controls="about" role="tab" data-toggle="modal" data-target="#myModal">About</a></li>
+      <li role="presentation"><a href="#contacts" aria-controls="contacts" role="tab" data-toggle="modal" data-target="#contactModal">Contact me</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+      <div role="tabpanel" class="tab-pane" id="profile"></div>
+      <div role="tabpanel" class="tab-pane" id="about"></div>
+      <div role="tabpanel" class="tab-pane" id="contacts"></div>
+    </div>
+
+  </div>
+
+
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">

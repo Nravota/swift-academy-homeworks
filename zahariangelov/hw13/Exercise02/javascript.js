@@ -10,11 +10,11 @@ function rgb(r, g, b) {
         r_hex = "0" + r_hex;
     }
     
-    else if (g_hex < 0x10) {
+    if (g_hex < 0x10) {
         g_hex = "0" + g_hex;
     }
     
-    else if (b_hex < 0x10) {
+    if (b_hex < 0x10) {
         b_hex = "0" + b_hex;
     }
     var rgb = "#" + r_hex + g_hex + b_hex;

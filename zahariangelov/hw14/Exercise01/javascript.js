@@ -21,9 +21,8 @@
         
         //Втората функция са while цикъл
         function whileCheckEven(array) {  
-            var i;
+            var i = 0;
             while(i < array.length) {
-                i = 0;
                 if (array[i] % 2 != 0 ) {
                     bool = "false";
                     break;

@@ -1,4 +1,8 @@
-var word = "word";
+function revWord(word) {
+    
 var reversedWord = word.split('').reverse().join('');
 
-console.log(word + " ==> " + reversedWord);
+return word + " ==> " + reversedWord;
+}
+
+console.log(revWord("squirrel"));

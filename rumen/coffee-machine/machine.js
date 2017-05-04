@@ -1,11 +1,15 @@
 /*global document*/
-function CoffeeMachine() {
-    this.coffee = 0;
-    this.milk = 0;
-    this.water = 0;
-    this.cups = 0;
-}
-var myNamespace = (function () {
+var myNamespace = {};
+(function (namespace) {
+    "use strict";
+
+    function CoffeeMachine() {
+        this.coffee = 0;
+        this.milk = 0;
+        this.water = 0;
+        this.cups = 0;
+        this.money = 0;
+    }
     var machine = new CoffeeMachine();
 
     CoffeeMachine.prototype.smallLoad = function () {
@@ -27,59 +31,101 @@ var myNamespace = (function () {
         this.cups += 60;
     };
     CoffeeMachine.prototype.htmlStatus = function () {
-        return ("<div class=\"well\">coffee: " + this.coffee + " gr</div>" + "<div class=\"well\">milk: " + this.milk + " ml</div>" + "<div class=\"well\">water: " + this.water + " ml</div>" + "<div class=\"well\">cups: " + this.cups + " pcs</div>");
+        return ("<div class=\"well\">coffee: " + this.coffee + " gr</div>" + "<div class=\"well\">milk: " + this.milk + " ml</div>" + "<div class=\"well\">water: " + this.water + " ml</div>" + "<div class=\"well\">cups: " + this.cups + " pcs</div>" + "<div class=\"well\">Turnover: " + this.money.toFixed(2) + " BGN</div>");
+    };
+    CoffeeMachine.prototype.coffee = function () {
+        this.coffee += 20;
+        this.milk += 10;
+        this.water += 20;
+        this.cups += 1;
     };
     CoffeeMachine.prototype.order = function (beverage) {
-        if (recepes[beverage] === undefined) {
+        var recept = beverage.getRecipe(),
+            price = beverage.getPrice();
+
+        if (recept === undefined) {
             throw new Error("<div class=\"well\">Uknown beverage</div>");
-        } else if ((this.coffee >= recepes[beverage].coffee) && (this.milk >= (recepes[beverage].milk || 0)) && (this.water >= recepes[beverage].water) && (this.cups >= recepes[beverage].cups)) {
-            this.coffee -= recepes[beverage].coffee;
-            this.milk -= recepes[beverage].milk || 0;
-            this.water -= recepes[beverage].water;
-            this.cups -= recepes[beverage].cups;
-            return this;
+        } else if ((this.coffee >= recept.coffee) && (this.milk >= (recept.milk || 0)) && (this.water >= recept.water) && (this.cups >= recept.cups)) {
+            this.coffee -= recept.coffee;
+            this.milk -= recept.milk || 0;
+            this.water -= recept.water;
+            this.cups -= recept.cups;
+            this.money += price;
         } else {
             throw new Error("<div class=\"well\">Not enough components</div>");
         }
 
     };
 
-    function RECEPES() {
-        this.coffee = {
-            coffee: 20,
-            water: 60,
-            cups: 1
+    function Beverage(name) {
+        var PRICES = {
+            coffee: {
+                recipe: {
+                    coffee: 20,
+                    water: 60,
+                    cups: 1
+                },
+                price: 0.5
+            },
+            coffee_with_milk: {
+                recipe: {
+                    coffee: 20,
+                    water: 50,
+                    milk: 20,
+                    cups: 1
+                },
+                price: 0.6
+            },
+            cappuccino: {
+                recipe: {
+                    coffee: 20,
+                    water: 30,
+                    milk: 40,
+                    cups: 1
+                },
+                price: 0.8
+            },
+            latte: {
+                recipe: {
+                    coffee: 20,
+                    water: 30,
+                    milk: 60,
+                    cups: 1
+                },
+                price: 0.8
+            },
+            americano: {
+                recipe: {
+                    coffee: 20,
+                    water: 130,
+                    cups: 1
+                },
+                price: 0.6
+            },
+            double: {
+                recipe: {
+                    coffee: 35,
+                    water: 80,
+                    cups: 1
+                },
+                price: 0.7
+            }
         };
-        this.coffee_with_milk = {
-            coffee: 20,
-            water: 50,
-            milk: 20,
-            cups: 1
+        var _name = name,
+            _price = PRICES[name].price,
+            _recipe = PRICES[name].recipe;
+
+        this.getName = function () {
+            return _name;
         };
-        this.cappuccino = {
-            coffee: 20,
-            water: 30,
-            milk: 40,
-            cups: 1
+        this.getPrice = function () {
+            return _price;
         };
-        this.latte = {
-            coffee: 20,
-            water: 30,
-            milk: 60,
-            cups: 1
-        };
-        this.americano = {
-            coffee: 20,
-            water: 130,
-            cups: 1
-        };
-        this.double = {
-            coffee: 35,
-            water: 80,
-            cups: 1
+        this.getRecipe = function () {
+            return _recipe;
         };
     }
-    var recepes = new RECEPES();
     document.getElementById("statusContainer").innerHTML = machine.htmlStatus();
-});
-myNamespace();
+    namespace.CoffeeMachine = CoffeeMachine;
+    namespace.Beverage = Beverage;
+})(myNamespace);

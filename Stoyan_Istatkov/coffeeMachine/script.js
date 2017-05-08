@@ -2,7 +2,8 @@
 (function () {
   "use strict";
 
-  var machine = new CoffeeMachine();
+  var machine = new CoffeeNamespace.CoffeeMachine();
+  //   var machine = new CoffeeMachine();
 
   function displayStatus() {
     var statusContainer = document.getElementById("statusContainer");

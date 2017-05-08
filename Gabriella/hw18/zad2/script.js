@@ -13,4 +13,4 @@ setInterval(function () {
             rotationDegrees += 90;
         }
     }
-}, 1000)
+},1000)

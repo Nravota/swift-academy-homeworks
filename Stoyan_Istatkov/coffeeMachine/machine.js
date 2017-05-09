@@ -1,79 +1,134 @@
-
- /* Created by STEVIS on 4/25/2017. */
- 
-"use strict";
+/* Created by STEVIS on 4/25/2017. */
+/*global document*/
 
 
-function  CoffeeMachine () {
-    this.coffee = 0;
-    this.water = 0;
-    this.milk = 0;
-    this.cups = 0;
-}
-     var machine = new CoffeeMachine();
+var CoffeeNamespace = {};
 
-CoffeeMachine.prototype.status = function () {
-    return "coffee: " + this.coffee + " gr. " + "<br>"
-        + "milk: " + this.milk + " ml." + "<br>"
-        + "water: " + this.water + " ml." + "<br>"
-        + "cups: " + this.cups ;
+(function () {
 
-};
-CoffeeMachine.prototype.smallLoad = function() {
+    "use strict";
 
-    this.coffee += 100;
-    this.water += 300;
-    this.milk += 200;
-    this.cups += 10;
-};
+    function Beverage(name) {
 
-CoffeeMachine.prototype.mediumLoad = function() {
+        var PRICES = {
 
-    this.coffee += 500;
-    this.water += 1000;
-    this.milk += 300;
-    this.cups += 30;
-};
+            "coffee": {recipe: {coffee: 20, water: 60}, price: 0.50},
 
-CoffeeMachine.prototype.bigLoad = function() {
+            "coffee_with_milk": {recipe: {coffee: 20, water: 50, milk: 20}, price: 0.60},
 
-    this.coffee += 1000;
-    this.water += 2000;
-    this.milk += 600;
-    this.cups += 60;
-};
+            "cappuccino": {recipe: {coffee: 20, water: 30, milk: 40}, price: 0.80},
 
-CoffeeMachine.prototype.htmlStatus = function () {
-    // MAKE A PRETTY HTML OUTPUT HERE!!!!!
+            "latte": {recipe: {coffee: 20, water: 30, milk: 60}, price: 0.80},
 
-    document.getElementById("statusContainer").style.backgroundColor = "#FCF8E3";
-    document.getElementById("statusContainer").style.fontSize = "20px";
-    document.getElementById("statusContainer").style.color = "#8A6D3B";
-    return this.status();
-};
+            "americano": {recipe: {coffee: 20, water: 130}, price: 0.60},
 
-var RECIPES = {
+            "double": {recipe: {coffee: 35, water: 80}, price: 0.70}
+        };
 
-    coffee : {coffee:20, water:60, cups:1 },
+        var _name = name;
+        var _price = PRICES[name].price;
+        var _recipe = PRICES[name].recipe;
 
-    coffeeMilk : {coffee:20, water:50, milk:20, cups:1 },
+        this.getName = function () {
+            return _name;
+        };
 
-    cappuccino : {coffee:20, water:30, milk:40, cups:1 },
+        this.getPrice = function () {
+            return _price;
+        };
 
-    latte : {coffee:20,water:30, milk:60, cups:1 },
+        this.getRecipe = function () {
+            return _recipe;
+        };
+    }
 
-    americano : {coffee:20, water:130, cups:1 },
+    function CoffeeMachine() {
+        this.coffee = 0;
+        this.water = 0;
+        this.milk = 0;
+        this.cups = 0;
+        this.turnover = 0;
+    }
 
-    doubleCoffee :{coffee:35, water:80, cups:1 }
+    var machine = new CoffeeMachine();
 
-};
-console.log(RECIPES.coffee);
+    CoffeeMachine.prototype.smallLoad = function () {
 
-CoffeeMachine.prototype.order = function (drink) {
+        this.coffee += 100;
+        this.water += 300;
+        this.milk += 200;
+        this.cups += 10;
+    };
 
-    return "serves one " + drink;
-};
-machine.order("cappuccino");
+    CoffeeMachine.prototype.mediumLoad = function () {
+
+        this.coffee += 500;
+        this.water += 1000;
+        this.milk += 300;
+        this.cups += 30;
+    };
+
+    CoffeeMachine.prototype.bigLoad = function () {
+
+        this.coffee += 1000;
+        this.water += 2000;
+        this.milk += 600;
+        this.cups += 60;
+    };
+
+    CoffeeMachine.prototype.order = function (name) {
+
+        var drink = new Beverage(name);
+        var recipe = drink.getRecipe();
+
+        if (drink === undefined) {
+            throw new Error("!Unknown beverage!");
+        }
+
+        else if ((this.coffee >= (recipe.coffee || 0)) && (this.water >= (recipe.water || 0)) && (this.milk >= (recipe.milk || 0)) && (this.cups >= (recipe.cups || 0))) {
+
+            this.coffee -= recipe.coffee || 0;
+            this.water -= recipe.water || 0;
+            this.milk -= recipe.milk || 0;
+            this.cups -= recipe.cups || 0;
+            this.turnover += drink.getPrice();
+            return "serves one " + drink;
+        }
+
+        else {
+            throw new Error("Not enough components!!!");
+        }
+    };
+
+    CoffeeMachine.prototype.status = function () {
+
+        return ("<p class=\"bg-warning\">"+"<img src=img/coffee.svg alt='coffee' width=\"60\" class=\"img-rounded\">"+"         coffee: " + this.coffee + " gr.</p>"
+            + "<p class=\"panel panel-warning\">"+"<img src=img/milk.svg alt='milk'  width=\"60\" class=\"img-rounded\">"+"   milk: " + this.milk + "  ml.</p>"
+            + "<p class=\"bg-info\">"+"<img src=img/water.svg alt='water' width=\"60\" class=\"img-rounded\">"+"" +
+            "   water: " + this.water + " ml.</p>"
+            + "<p class=\"bg-success\">"+"<img src=img/money.svg alt='money' width=\"60\" class=\"img-rounded\">"+"         price: " + this.turnover + " \$</p>"
+        );
+    };
+
+    CoffeeMachine.prototype.htmlStatus = function () {
+        // MAKE A PRETTY HTML OUTPUT HERE!!!!!
+        var container = document.getElementById("statusContainer");
+
+        container.style.backgroundColor = "#f1f1da";
+        container.style.fontSize = "1.5em";
+        container.style.color = "#8A6D3B";
+        return this.status();
+    };
+
+    CoffeeNamespace.CoffeeMachine = CoffeeMachine;
+    CoffeeNamespace.Beverage = Beverage;
+
+})();
+
+
+
+
+
 
 
 

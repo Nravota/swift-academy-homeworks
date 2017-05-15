@@ -19,10 +19,10 @@ function whileCheckEven(array) {
     var areAllElementsEven = true;
     var i = 0;
     while (i < array.length) {
-        i += 1;
         if (array[i] % 2 != 0) {
             areAllElementsEven = false;
         }
+        i += 1;
     }
     return areAllElementsEven;
 }
@@ -35,10 +35,10 @@ function doCheckEven(array) {
     var areAllElementsEven = true;
     var i = 0;
     do {
-        i += 1;
         if (array[i] % 2 != 0) {
             areAllElementsEven = false;
         }
+        i += 1;
     } while (i < array.length);
     return areAllElementsEven;
 }

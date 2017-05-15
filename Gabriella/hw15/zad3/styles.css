@@ -5,7 +5,8 @@ body {
 div {
     width: 30%;
     display: inline-block;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    padding: 20px;
 }
 
 h3 {

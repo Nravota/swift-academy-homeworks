@@ -12,3 +12,4 @@ function after30Seconds() {
     var host = window.location;
     document.querySelector("div:last-of-type").classList.remove("hidden");
     document.getElementById("hostname").innerHTML = host;
+}

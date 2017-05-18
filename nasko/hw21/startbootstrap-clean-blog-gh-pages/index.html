@@ -60,6 +60,7 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -84,51 +85,26 @@
     </header>
 
     <!-- Main Content -->
+    
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Top Ten Herbs You Should Deffinitely Make Tea from
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Atanas Yonkov</a> on March 24, 2017</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Maria Treben and the power of herbs
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Atanas Yonkov</a> on March 18, 2017</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Science has not yet mastered prophecy
-                        </h2>
-                        <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Failure is not an option
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                </div>
-                <hr>
+       
+        <!-- Search Box -->
+        <div class="nav navbar-nav navbar-right">
+        <div class="col-lg-12">
+            <p>
+                <input type="text" placeholder="Search posts" id="search" class="form-control">
+            </p>
+        </div>
+        </div>
+                    
+                    <!-- Load posts from JSON file  -->
+
+                    <div id="postContainer" class="post-preview"></div>
+
+
+                    <p id="debug"></p>
+                
+                
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
@@ -136,10 +112,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </div>
 
-    <hr>
 
     <!-- Footer -->
     <footer>
@@ -179,7 +152,9 @@
     </footer>
 
     <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script
     <script src="vendor/jquery/jquery.min.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -190,6 +165,9 @@
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/custom.js" type="application/javascript"></script>
 
 </body>
 

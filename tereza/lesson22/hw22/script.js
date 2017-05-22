@@ -1,4 +1,4 @@
-/* global $,document*/
+/* global $*/
 
 (function () {
   "use strict";
@@ -24,8 +24,7 @@
 
 
   function displayFilms() {
-    var filmsList = films;
-    for (var i = 0; i < filmsList.length; i++) {
+    for (var i = 0; i < films.length; i++) {
       var filmHTML = TEMPLATE
       .replace("%IMAGE_URL%", films[i].imgUrl)
       .replace("%IMAGE_ALT%", films[i].title)
@@ -35,18 +34,9 @@
       $('#collection').append(filmHTML);
     }
   }
-  $("collection").innerHTML = displayFilms();
-
 
   $("#fetch-about").on("click", function () {
     $("#info-html").load("_about.html");
   });
-//  
-//  $(document).ready(function(){
-//    $("fetch-about").click(function(){
-//      $("#info-html").load("_about.html");
-//    });
-//  });
-
   
 })();

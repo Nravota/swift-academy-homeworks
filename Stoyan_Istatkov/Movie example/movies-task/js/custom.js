@@ -98,42 +98,45 @@
 
     document.filtersForm.sortBy.addEventListener("change", function () {
 
-        films.forEach(function (film) {
+        // films.forEach(function (film) {
 
-            var sort = target.event.value;
+            var sort = this.value;
 
             if (sort === "title-asc") {
 
-                var titleAscending = film.original_title.sort();
+                var titleAscending = films.sort( function(a, b){return b.original_title - a.original_title;});
                 displayFilms(titleAscending);
             }
-            if (sort === "title-desc") {
+             else if (sort === "title-desc") {
 
-                var titleDescendig = film.original_title.sort().reverse();
+                var titleDescendig = films.sort( function(a, b){return b.original_title - a.original_title;});
                 displayFilms(titleDescendig);
             }
 
-            if (sort === "date-asc") {
+            else if (sort === "date-asc") {
 
-                var yearAscending = film.release_date.split("-")[0].sort( function(a, b){return a - b;});
+                var yearAscending = films.sort( function(a, b){return b.release_date.split("-")[0] - a.release_date.split("-")[0];});
                 displayFilms(yearAscending);
             }
-            if (sort === "date-desc") {
+            else if (sort === "date-desc") {
 
-                var yearDescending = film.release_date.split("-")[0].sort( function(a, b){return b - a;});
+                var yearDescending = films.sort( function(a, b){return a.release_date.split("-")[0] - b.release_date.split("-")[0];});
                 displayFilms(yearDescending);
             }
-            if (sort === "rating-asc") {
+            else if (sort === "rating-asc") {
 
-                var ratingAscending = film.vote_average.sort( function(a, b){return a - b;});
+                var ratingAscending = films.sort( function(a, b){return b.vote_average - a.vote_average;});
                 displayFilms(ratingAscending);
             }
-            if (sort === "rating-desc") {
+            else if (sort === "rating-desc") {
 
-                var ratingDescending= film.vote_average.sort( function(a, b){return b - a;});
+                var ratingDescending= films.sort( function(a, b){return a.vote_average - b.vote_average;});
                 displayFilms(ratingDescending);
             }
-       });
+            else {
+                displayFilms(films);
+            }
+       // });
     });
 
   // document.getElementbyID("#collectionLink").addEventListener("click", function () {

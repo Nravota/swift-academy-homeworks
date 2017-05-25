@@ -7,22 +7,20 @@ $(document).ready(function () {
     "use strict";
 
     var valName = /^[a-zA-Z ]{2,30}$/;
-    var name  = $("#user_name").val();
-
     var valFamily = /^[a-zA-Z ]{2,30}$/;
-    var family = $("#family_name").val();
-
     var valEmail = /^[A-Za-z][\w\.\-\_\d]+@[a-z]+[\.][a-z]+$/;
-    var email = $("#user_email").val();
-
     var valPhone = /^(\+|00)359 ?\d{3} ?\d{3} ?\d{3}$/;
-    var phone = $("#user_phone").val();
-
     var valPassword = /^[0-9a-zA-Z_]{3,}$/;
-    var password = $("#user_password").val();
 
 
     $("button").on("click", function (event) {
+
+        var name  = $("#user_name").val();
+        var family = $("#family_name").val();
+        var email = $("#user_email").val();
+        var phone = $("#user_phone").val();
+        var password = $("#user_password").val();
+
 
         event.preventDefault();
 
@@ -39,6 +37,8 @@ $(document).ready(function () {
 
     $("#user_name").on("blur", function () {
 
+        var name  = $(this).val();
+
         if (!valName.test(name)) {
 
             $("#username-error-field").html("Only letters ; 2 symbols minimum");
@@ -51,6 +51,8 @@ $(document).ready(function () {
     });
 
     $("#family_name").on("blur", function () {
+
+        var family = $(this).val();
 
         if (!valFamily.test(family)) {
 
@@ -65,6 +67,8 @@ $(document).ready(function () {
 
     $("#user_email").on("blur", function () {
 
+        var email = $(this).val();
+
         if (!valEmail.test(email)) {
 
             $("#email-error-field").html("*****@*****.domain");
@@ -78,8 +82,8 @@ $(document).ready(function () {
 
     $("#user_phone").on("blur", function () {
 
-        var valPhone = /^(\+|00)359 ?\d{3} ?\d{3} ?\d{3}$/;
-        var phone = $("this").val();
+
+        var phone = $(this).val();
 
         if (!valPhone.test(phone)) {
 
@@ -94,8 +98,7 @@ $(document).ready(function () {
 
     $("#user_password").on("blur", function () {
 
-        var valPassword = /^[A-Za-z0-9]{3,}$/;
-        var password = $("#user_password").val();
+        var password = $(this).val();
 
         if (!valPassword.test(password)) {
 
@@ -108,5 +111,5 @@ $(document).ready(function () {
         }
     });
 
+});
 
-})();

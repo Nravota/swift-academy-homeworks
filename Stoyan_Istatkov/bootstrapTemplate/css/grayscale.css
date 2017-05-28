@@ -3,18 +3,25 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
 body {
   width: 100%;
   height: 100%;
-  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #e8be1d;
-  background-color: rgba(189, 155, 24, 0.44);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #c9dcdb;
+  background-color: rgba(1, 1, 11, 0.96);
 }
 html {
   width: 100%;
   height: 100%;
 }
-h1,
+h1 {
+  font-weight: bold;
+  font-family: Orbitron, sans-serif;
+  color: rgba(201, 220, 219, 0.54);
+  text-shadow: 2px 2px 1px rgba(3, 3, 38, 0.42);
+
+}
 h2,
 h3,
 h4,
@@ -22,7 +29,7 @@ h5,
 h6 {
   margin: 0 0 35px;
   text-transform: uppercase;
-  font-family: "Lato Heavy", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato ", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -58,7 +65,7 @@ a:focus {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ddb41d;
+  background-color: rgba(53, 53, 53, 0.95);
 }
 .navbar-custom .navbar-toggle {
   color: white;
@@ -76,7 +83,7 @@ a:focus {
   outline: none;
 }
 .navbar-custom a {
-  color: white;
+  color: #c9dcdb;
 }
 .navbar-custom .nav li a {
   -webkit-transition: background 0.3s ease-in-out;
@@ -84,7 +91,7 @@ a:focus {
   transition: background 0.3s ease-in-out;
 }
 .navbar-custom .nav li a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(77, 220, 212, 0.8);
   outline: none;
   background-color: transparent;
 }
@@ -101,7 +108,7 @@ a:focus {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .navbar-custom .nav li.active a:hover {
-  color: white;
+  color: #4ddcd4;
 }
 @media (min-width: 768px) {
   .navbar-custom {
@@ -115,7 +122,7 @@ a:focus {
   }
   .navbar-custom.top-nav-collapse {
     padding: 0;
-    background: #e8be1d;
+    background-color: rgba(53, 53, 53, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
@@ -125,9 +132,9 @@ a:focus {
   height: auto;
   padding: 100px 0;
   text-align: center;
-  color: #ffce24;
+  color: #c9dcdb;
   background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
-  background-color: #e8be1d;
+  background-color: #01010b;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -156,15 +163,16 @@ a:focus {
   }
 }
 .btn-circle {
+  vertical-align: middle;
   text-align: center;
   width: 70px;
   height: 70px;
   margin-top: 15px;
   padding: 7px 16px;
-  border: 2px solid white;
+  border: 2px solid #4ddcd4;
   border-radius: 100% !important;
   font-size: 40px;
-  color: white;
+  color: #4ddcd4;
   background: transparent;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
@@ -173,8 +181,9 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus {
   outline: none;
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
+  color: #c9dcdb;
+  background: rgba(66, 220, 163, 0.1);
+
 }
 .btn-circle i.animated {
   -webkit-transition-property: -webkit-transform;
@@ -182,7 +191,7 @@ a:focus {
   -moz-transition-property: -moz-transform;
   -moz-transition-duration: 1s;
 }
-.btn-circle:hover i.animated {
+.btn-circle i.animated {
   -webkit-animation-name: pulse;
   -moz-animation-name: pulse;
   -webkit-animation-duration: 1.5s;
@@ -229,7 +238,7 @@ a:focus {
   padding: 50px 0;
   color: white;
   background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-  background-color: #e8be1d;
+  background-color: #c9dcdb;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -262,8 +271,8 @@ a:focus {
   border-radius: 0;
 }
 .btn-default {
-  border: 1px solid #42DCA3;
-  color: #42DCA3;
+  border: 1px solid #444444;
+  color: #45f1b7;
   background-color: transparent;
 }
 .btn-default:hover,

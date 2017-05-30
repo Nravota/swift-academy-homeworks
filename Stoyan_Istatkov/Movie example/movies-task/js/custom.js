@@ -47,8 +47,6 @@
         displayFilms(films);
   });
 
-    // film.release_date.split("-")[0] === year;
-
     document.filtersForm.year.addEventListener("change", function () {
 
       var year = this.value;
@@ -70,14 +68,15 @@
 
     var genre = this.value.toLocaleLowerCase();
 
-    if (!genre) {
-        displayFilms(films);
-    }
-    else {
+    if (genre) {
+
         var filteredFilms = films.filter(function(film) {
             return film.genres.toLocaleLowerCase().indexOf(genre) > -1;
         });
         displayFilms(filteredFilms);
+    }
+    else {
+        displayFilms(films);
     }
     });
 
@@ -98,51 +97,94 @@
 
     document.filtersForm.sortBy.addEventListener("change", function () {
 
-        films.forEach(function (film) {
+        var sortProp = this.value;
 
-            var sort = target.event.value;
+        var titleAscending = films.sort(function(a, b)
+        {
+            if ( a.title > b.title ){
+                return 1;
+            }
+            if( a.title < b.title){
+                return -1;
+            }
+            return 0;
+        });
 
-            if (sort === "title-asc") {
+        var yearAscending = films.sort(function(a, b)
+        {
+            if ( a.release_date.split("-")[0] > b.release_date.split("-")[0] ){
+                return 1;
+            }
+            if( a.release_date.split("-")[0] < b.release_date.split("-")[0]){
+                return -1;
+            }
+            return 0;
+        });
 
-                var titleAscending = film.original_title.sort();
+        var ratingAscending = films.sort(function(a, b)
+        {
+            if ( a.vote_average > b.vote_average ){
+                return 1;
+            }
+            if( a.vote_average < b.vote_average){
+                return -1;
+            }
+            return 0;
+        });
+
+            if (sortProp === "title-asc") {
+
                 displayFilms(titleAscending);
             }
-            if (sort === "title-desc") {
+             else if (sortProp === "title-desc") {
 
-                var titleDescendig = film.original_title.sort().reverse();
-                displayFilms(titleDescendig);
+                var titleDescending = titleAscending.reverse();
+                displayFilms(titleDescending);
             }
 
-            if (sort === "date-asc") {
+            else if (sortProp === "date-asc") {
 
-                var yearAscending = film.release_date.split("-")[0].sort( function(a, b){return a - b;});
+
                 displayFilms(yearAscending);
             }
-            if (sort === "date-desc") {
+            else if (sortProp === "date-desc") {
 
-                var yearDescending = film.release_date.split("-")[0].sort( function(a, b){return b - a;});
+                var yearDescending = yearAscending.reverse();
                 displayFilms(yearDescending);
             }
-            if (sort === "rating-asc") {
+            else if (sortProp === "rating-asc") {
 
-                var ratingAscending = film.vote_average.sort( function(a, b){return a - b;});
                 displayFilms(ratingAscending);
             }
-            if (sort === "rating-desc") {
+            else if (sortProp === "rating-desc") {
 
-                var ratingDescending= film.vote_average.sort( function(a, b){return b - a;});
+                var ratingDescending = ratingAscending.reverse();
                 displayFilms(ratingDescending);
             }
-       });
+            else {
+                displayFilms(films);
+            }
+
     });
 
-  // document.getElementbyID("#collectionLink").addEventListener("click", function () {
-  //       // your code here ...
-  //   });
-  //
-  // document.getElementbyID("#aboutLInk").addEventListener("click", function () {
-  //       // your code here ...
-  //   });
+  $("#homeLink").on("click", function () {
+
+      $("#collection").load("./_Home.html");
+      $("#filters").addClass("hidden");
+      $(".pagination").addClass("hidden");
+    });
+
+  $("#aboutLink").on("click", function () {
+
+        $("#collection").load("./_About.html");
+        $("#filters").addClass("hidden");
+        $(".pagination").addClass("hidden");
+
+    });
+
+    $("#collectionLink").on("click", function () {
+        displayFilms(films);
+    });
 
 
   function displayFilms(list) {

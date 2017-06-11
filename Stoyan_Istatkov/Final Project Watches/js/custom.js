@@ -72,10 +72,13 @@
 
     $("#about").on("click", function () {
         $("#shop-container").load("./_about.html");
+        $("#sidebar").addClass(" hidden-xs hidden-sm")
     });
 
     $("#contact").on("click", function () {
         $("#shop-container").load("./_contact.html");
+        $("#sidebar").addClass("hidden-xs hidden-sm")
+
     });
 
     document.querySelector("#btn-search").addEventListener("click", function (event) {

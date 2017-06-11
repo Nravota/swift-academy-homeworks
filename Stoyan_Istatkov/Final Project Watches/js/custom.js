@@ -32,7 +32,7 @@
             "                       </section>\n" +
             "                   </div>\n" +
             "\n" +
-            "                   <button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\">Buy</button>\n";
+            "                   <button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\">More</button>\n";
 
         var htmlString = pattern
             .replace(/"%ID%"/g, this.id)
@@ -72,10 +72,13 @@
 
     $("#about").on("click", function () {
         $("#shop-container").load("./_about.html");
+        $("#sidebar").addClass(" hidden-xs hidden-sm")
     });
 
     $("#contact").on("click", function () {
         $("#shop-container").load("./_contact.html");
+        $("#sidebar").addClass("hidden-xs hidden-sm")
+
     });
 
     document.querySelector("#btn-search").addEventListener("click", function (event) {
@@ -166,5 +169,7 @@
         }
         showWatches(sorted);
     });
+
+
 
 })();

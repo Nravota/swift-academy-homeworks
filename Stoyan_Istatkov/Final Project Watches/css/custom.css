@@ -86,6 +86,10 @@ section {
     margin-bottom: 10px;
 }
 
+#contact-form {
+    margin-bottom: 15px;
+}
+
 .navbar-default .navbar-brand {
     display:none;
 }

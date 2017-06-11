@@ -344,7 +344,11 @@
             expandToSingle();
             return filtered;
         });
-        //        return filtered;
+        $(".reset").click(function (event) {
+            event.preventDefault();
+            resetFilters();
+            displayStock(list, selector);
+        });
     }
 
     function expandToSingle() {

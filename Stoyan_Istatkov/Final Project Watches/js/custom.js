@@ -32,7 +32,7 @@
             "                       </section>\n" +
             "                   </div>\n" +
             "\n" +
-            "                   <button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\">Buy</button>\n";
+            "                   <button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\">More</button>\n";
 
         var htmlString = pattern
             .replace(/"%ID%"/g, this.id)
@@ -166,5 +166,7 @@
         }
         showWatches(sorted);
     });
+
+
 
 })();

@@ -1,0 +1,46 @@
+[
+    {
+        "title": "product 1"
+        , "url": "/img/childroom.jpg"
+        , "price": 35
+        , "description": "Awsome designer bathroom."
+        , "date": "12/1/2017"
+        , "category": "bathrooms"
+    }
+
+    , {
+        "title": "product 2"
+        , "url": "/img/childroom.jpg"
+        , "price": 35
+        , "description": "Awsome designer bathroom."
+        , "date": "12/1/2017"
+        , "category": "bedrooms"
+    }
+
+    , {
+        "title": "product 3"
+        , "url": "/img/childroom.jpg"
+        , "price": 35
+        , "description": "Awsome designer bathroom."
+        , "date": "12/1/2017"
+        , "category": "livingrooms"
+    }
+
+    , {
+        "title": "product 4"
+        , "url": "/img/childroom.jpg"
+        , "price": 35
+        , "description": "Awsome designer bathroom."
+        , "date": "12/1/2017"
+        , "category": "childrooms"
+    }
+
+    , {
+        "title": "product 5"
+        , "url": "/img/childroom.jpg"
+        , "price": 400
+        , "description": "Awsome designer bathroom."
+        , "date": "12/1/2017"
+        , "category": "bedrooms"
+    }
+]
